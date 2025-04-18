@@ -133,3 +133,93 @@
     display: inline-block;
     margin-bottom: 10px;
 }
+/* Estilos para funcionalidades JS */
+.menu-toggle {
+    display: none;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+.image-preview {
+    max-width: 200px;
+    max-height: 200px;
+    display: none;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+}
+
+.image-uploads-container {
+    margin: 15px 0;
+}
+
+.btn-remove-image, 
+.btn-remove-talla, 
+.btn-remove-color {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    margin-left: 5px;
+    line-height: 25px;
+    padding: 0;
+}
+
+.talla-input, .color-input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.toggle-password {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 35px;
+    color: #555;
+}
+
+.alert {
+    transition: opacity 0.6s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 250px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        background: #2c3e50;
+    }
+    
+    .sidebar nav ul {
+        flex-direction: column;
+    }
+    
+    .content {
+        margin-left: 0;
+    }
+    
+    .sidebar.active + .content {
+        margin-left: 250px;
+    }
+}

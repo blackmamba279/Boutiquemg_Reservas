@@ -1,34 +1,31 @@
 [build]
-  # No build command needed for pure PHP projects
   publish = "boutiquemg_reservas"
   functions = "functions"
 
+# Configuración específica para PHP
 [build.environment]
   PHP_VERSION = "8.2"
-  NPM_FLAGS = "--version"  # Prevents Node.js dependency errors
+  NPM_FLAGS = "--version"  # Evita errores de Node.js
 
-# Required for PHP routing - all requests go to index.php
+# Redirecciones para el enrutamiento PHP
 [[redirects]]
   from = "/*"
   to = "/index.php"
   status = 200
 
-# Security headers
+# Cabeceras de seguridad
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Content-Security-Policy = """
-      default-src 'self' https://*.whatsapp.com;
-      img-src 'self' data: https:;
-      script-src 'self' 'unsafe-inline' https://*.whatsapp.com;
-      style-src 'self' 'unsafe-inline';
-      connect-src 'self' https://*.whatsapp.com;
-    """
+    Content-Security-Policy = "default-src 'self' https: data: 'unsafe-inline' https://*.whatsapp.com"
 
-# Environment variables (optional)
-[context.production.environment]
-  WHATSAPP_NUMBER = "+50587010851"
-  SITE_TITLE = "Boutique MG Reservas"
+# Configuración del procesamiento de PHP
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+
+[dev]
+  framework = "#custom"  # Desactiva detección automática de frameworks
+  command = "echo 'Servidor PHP listo'"

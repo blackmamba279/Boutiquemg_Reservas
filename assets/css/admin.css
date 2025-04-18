@@ -86,3 +86,50 @@
     background: #ddffdd;
     color: #2ecc71;
 }
+/* Estilos específicos para la página de configuración */
+.form-configuracion {
+    max-width: 800px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.form-configuracion .form-group {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.form-configuracion label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-configuracion input[type="text"],
+.form-configuracion textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-configuracion textarea {
+    min-height: 100px;
+}
+
+.form-configuracion small {
+    display: block;
+    margin-top: 5px;
+    color: #666;
+    font-size: 13px;
+}
+
+.logo-preview {
+    padding: 10px;
+    background: #fff;
+    border: 1px dashed #ccc;
+    display: inline-block;
+    margin-bottom: 10px;
+}

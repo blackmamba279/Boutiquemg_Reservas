@@ -1,0 +1,88 @@
+/* Estilos para la gestión de categorías */
+.form-categoria {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.tabla-categorias {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-categorias th,
+.tabla-categorias td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.tabla-categorias th {
+    background: #f2f2f2;
+}
+
+.acciones {
+    white-space: nowrap;
+}
+
+.btn-editar {
+    color: #3498db;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.btn-eliminar {
+    color: #e74c3c;
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn.cancelar {
+    background: #95a5a6;
+    margin-left: 10px;
+}
+
+.alert {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.alert.error {
+    background: #ffdddd;
+    color: #e74c3c;
+}
+
+.alert.success {
+    background: #ddffdd;
+    color: #2ecc71;
+}

@@ -1,0 +1,3 @@
+[build]
+  command = "mkdir -p boutiquemg_reservas && cp -r * boutiquemg_reservas/"
+  publish = "boutiquemg_reservas"  # Ahora Netlify buscará los archivos aquí

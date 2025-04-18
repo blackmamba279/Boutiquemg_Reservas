@@ -1,24 +1,15 @@
 [build]
-  command = "mkdir -p boutiquemg_reservas && cp -r * boutiquemg_reservas/ && cp netlify.toml boutiquemg_reservas/"
+  command = "mkdir -p boutiquemg_reservas && cp -r * boutiquemg_reservas/"
   publish = "boutiquemg_reservas"
   functions = "functions"
 
-[context.production.environment]
+# Especifica explícitamente que es un proyecto PHP
+[build.environment]
   PHP_VERSION = "8.2"
+  NODE_VERSION = "16" # Solo para evitar advertencias
+  NPM_FLAGS = "--prefix nonexistent" # Truco para evitar instalación de paquetes
 
 [[redirects]]
   from = "/*"
   to = "/index.php"
   status = 200
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Content-Security-Policy = "default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'"
-
-# Configuración específica para PHP
-[build.environment]
-  PHP_INI_SCAN_DIR = "/opt/buildhome/.phpini"

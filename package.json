@@ -1,0 +1,14 @@
+{
+  "name": "boutiquemg-reservas",
+  "version": "1.0.0",
+  "description": "Tienda de ropa con reservas por WhatsApp",
+  "scripts": {
+    "build": "echo 'Build para PHP - No se requiere npm' && exit 0",
+    "start": "echo 'Servidor PHP' && exit 0"
+  },
+  "engines": {
+    "php": "8.2"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

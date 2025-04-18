@@ -1,13 +1,12 @@
 [build]
   publish = "boutiquemg_reservas"
-  functions = "functions"
+  command = "echo 'Skipping build for PHP project'"
 
-# Configuración específica para PHP
 [build.environment]
   PHP_VERSION = "8.2"
-  NPM_FLAGS = "--version"  # Evita errores de Node.js
+  NPM_FLAGS = "--version"  # Truco para evitar errores de Node
 
-# Redirecciones para el enrutamiento PHP
+# Redirección para enrutamiento PHP
 [[redirects]]
   from = "/*"
   to = "/index.php"
@@ -19,13 +18,4 @@
   [headers.values]
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Content-Security-Policy = "default-src 'self' https: data: 'unsafe-inline' https://*.whatsapp.com"
-
-# Configuración del procesamiento de PHP
-[[plugins]]
-  package = "@netlify/plugin-lighthouse"
-
-[dev]
-  framework = "#custom"  # Desactiva detección automática de frameworks
-  command = "echo 'Servidor PHP listo'"
+    Content-Security-Policy = "default-src 'self' https://*.whatsapp.com"
